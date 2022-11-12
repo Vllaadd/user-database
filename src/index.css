@@ -2,7 +2,7 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
 }
 
-nav {
+.primary-nav {
     background-color: aliceblue;
     padding: 16px 32px;
 }
