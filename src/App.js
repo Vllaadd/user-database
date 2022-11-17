@@ -1,13 +1,16 @@
-import { Routes, Route } from "react-router-dom";
+import React from 'react'
+import Home from "home";
+import About from "about";
 
-function App() {
+
+
+const App = () => {
   return (
-    <>
-    <button>-</button>
-    <span></span>
-    <button>+</button>
-    </>
-  );
+	<>
+	<Home />
+	<About />
+	</>
+  )  
 }
 
 export default App;
