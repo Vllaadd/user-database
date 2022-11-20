@@ -1,5 +1,14 @@
-class Car extends React.Component {
-	render() {
-	  return <h2>Hi, I am a Car!</h2>;
-	}
-  }
+import React from 'react';
+import Home from  './components/Home';
+
+export default function App() {
+  return (
+	<>
+	<Router>
+		<Switch>
+			<Route path='/' element={<Home />} />
+		</Switch>
+	</Router>
+	</>
+  )
+}
