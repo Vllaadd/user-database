@@ -1,17 +1,29 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Search() {
-    const [language, setLanguage] = useState("");
-    const [input, setInput] = useState("");
+export default function Search(location) {
+    const [language, setLanguage] = useState('');
+    const [input, setInput] = useState('');
 
+//    equivalent to componentDidMount, fires once when component mounts, because dependency array is empty
     useEffect(()=>{
-        const params = new URLSearchParams();
+        // get all the URL Params
+        const params = new URLSearchParams(location.search);
+        // get the q param
+        const q = params.get('q');
+        // set language in state to the q parameter
+        setLanguage(q ? q : 'MatLab');
     })
 
+    // function for handling form submit
     const submitAction = (e) =>{
+        // prevetn default, so page won't reload on form submit
         e.preventDefault();
+        // set language in state
         setLanguage(input);
+        // add query string to URL
+        // coming soon
+        // clear the input 
         setInput('');
     }
 
