@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Search() {
     const [language, setLanguage] = useState("");
     const [input, setInput] = useState("");
+
+    useEffect(()=>{
+        const params = new URLSearchParams();
+    })
+
+    const submitAction = (e) =>{
+        e.preventDefault();
+        setLanguage(input);
+        setInput('');
+    }
+
     return (
         <>
             <div>
