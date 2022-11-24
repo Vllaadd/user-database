@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import History from './History';
 
 export default function Search(location) {
     const [language, setLanguage] = useState('');
@@ -13,7 +14,7 @@ export default function Search(location) {
         const q = params.get('q');
         // set language in state to the q parameter
         setLanguage(q ? q : 'MatLab');
-    })
+    }, []);
 
     // function for handling form submit
     const submitAction = (e) =>{
@@ -22,7 +23,7 @@ export default function Search(location) {
         // set language in state
         setLanguage(input);
         // add query string to URL
-        // coming soon
+    History.push('/search?q' + input);
         // clear the input 
         setInput('');
     }
