@@ -7,10 +7,7 @@ import History from './components/History';
 export default function App() {
   return (
 	<>
-	<Router history={History}>
-			<Route path='/' element={<Home />} />
-			<Route path='/serch' element={<Search />} />
-	</Router>
+	<div>Let's build the MERN TINDER clone guys!</div>>
 	</>
   )
-}
+};
