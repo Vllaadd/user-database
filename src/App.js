@@ -19,6 +19,39 @@ export default function App() {
 		};
 		fetchProducts();
 	}, []);
+
+const addProductHandler = async (productName, productPrice) =>{
+	try{
+		const newProduct = {
+			title: productName,
+			price: +productPrice
+			};
+			let hasError = false;
+			const response = await fetch('http://localhost:500/product', {
+				method: 'POST',
+				body: JSON.stringify(newProduct),
+				headers: {
+					'Content-Type' : 'application/json'
+				}
+			});
+			if(!response.ok){
+				hasError = true;
+			}
+			const responseData = await response.json();
+			if (hasError){
+				throw new Error(responseData.messasge);
+			}
+			setLoadedProducts(prevProducts =>{
+				return prevProducts.concat({
+					...newProduct,
+					id: responseDatta.product.id
+				});
+			});
+		} catch (error){
+			alert(error.message || 'Something went wrong!');
+		}
+	};
+
   return (
 	<React.Fragment>
 		<Header />
