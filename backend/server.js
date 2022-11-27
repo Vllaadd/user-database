@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const uuid = require('uuid/v4');
 
-const app = expresss();
+const app = express();
 
 const DUMMY_PRODUCTS = []; //not a database, just some in-memory storage for now 
 
