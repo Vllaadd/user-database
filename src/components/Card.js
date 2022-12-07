@@ -1,8 +1,10 @@
-import './Card.css';
+import './styling/Card.css';
 
-function Card(){
+function Card(props){
     return(
     <div className="card">{props.children}</div>
     )
     
 }
+
+export default Card;
