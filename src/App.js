@@ -1,5 +1,6 @@
 import React from 'react';
 import Expenses from './components/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 
 export default function App(props) {
@@ -23,7 +24,7 @@ export default function App(props) {
 	]
 	return (
 		<>
-			<h3>Let's get started!</h3>
+			<NewExpense />
 			<Expenses items={expenses} />
 		</>
 	)
