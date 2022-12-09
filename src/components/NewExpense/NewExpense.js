@@ -1,6 +1,5 @@
-import './NewExpense.css';
 import ExpenseForm from './ExpenseForm';
-import './styling/NewExpense.css';
+import '../styling/NewExpense.css';
 
 const NewExpense = () => {
     return(
